@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "GymManagementSystem"
+    }
+  },
+  "defaultProject": "GymManagementSystem",
+  "cli": {
+    "analytics": false
+  }
 }
