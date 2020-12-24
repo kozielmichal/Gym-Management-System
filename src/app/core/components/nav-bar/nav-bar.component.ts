@@ -12,8 +12,9 @@ import { Router } from '@angular/router';
 })
 export class NavBarComponent {
 
-  public showEmployeeMenu = false;
-  public showPresentMenu = false;
+  public showUsersMenu = false;
+  public showContractMenu = false;
+  public showCalendarMenu = false;
   public sideNavHiddenVisibility = true;
   @ViewChild(MatSidenav) drawer: MatSidenav;
 
@@ -29,26 +30,36 @@ export class NavBarComponent {
   navigateHome(){
     // this.router.navigate(["/" + AppRoutes.HOME]);
   }
-  navigateEmployee(){
+  navigateEmploeeList(){
     // this.router.navigate(["/" + AppRoutes.USERLIST])
   }
 
-  navigateAddEmployee(){
+  navigateUsersList(){
+    // this.router.navigate(["/" + AppRoutes.USERLIST])
+  }
+  navigateAddUser(){
     // this.router.navigate(["/" + AppRoutes.USERINFO])
   }
 
-  navigatePreseceList(){
+  navigateEmployeeContract(){
     // this.router.navigate(["/" + AppRoutes.PRESENCELIST])
   }
 
-  navigateAbsenceList(){
+  navigateUserContract(){
     // this.router.navigate(["/" + AppRoutes.ABSENCE])
   }
 
-  navigateRFID(){
+  navigateCalendar(){
     // this.router.navigate(["/" + AppRoutes.RFID])
   }
 
+  navigateFitnessActivity(){
+    // this.router.navigate(["/" + AppRoutes.RFID])
+  }
+
+  navigateAddFitnessActivity(){
+    // this.router.navigate(["/" + AppRoutes.RFID])
+  }
   navigateSettings(){
     // this.router.navigate(["/" + AppRoutes.SETTINGS])
   }
@@ -57,21 +68,28 @@ export class NavBarComponent {
     drawer.toggle();
     this.sideNavHiddenVisibility = !this.sideNavHiddenVisibility;
     if(!this.sideNavHiddenVisibility){
-      this.showEmployeeMenu = false;
-      this.showPresentMenu = false;
+      this.showUsersMenu = false;
+      this.showContractMenu = false;
     }
   }
 
   onEmployeeIconClick(menuTrigger){
     if (this.sideNavHiddenVisibility)
-      this.showEmployeeMenu=!this.showEmployeeMenu;
+      this.showUsersMenu=!this.showUsersMenu;
     if (!this.sideNavHiddenVisibility)
       menuTrigger.openMenu();
   }
 
   onPresentIconClick(menuTrigger){
     if (this.sideNavHiddenVisibility)
-      this.showPresentMenu=!this.showPresentMenu
+      this.showContractMenu=!this.showContractMenu
+    if (!this.sideNavHiddenVisibility)
+      menuTrigger.openMenu();
+  }
+
+  onSheduleIconClick(menuTrigger){
+    if (this.sideNavHiddenVisibility)
+      this.showCalendarMenu=!this.showCalendarMenu
     if (!this.sideNavHiddenVisibility)
       menuTrigger.openMenu();
   }

@@ -1,98 +1,139 @@
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav class="sidenav" fixedInViewport [attr.role]="'navigation'" [mode]="'side'" [opened]="true">
-      <mat-toolbar></mat-toolbar>
-      <mat-nav-list class="mat-nav-height">
-          <a mat-list-item>
-              <mat-icon aria-hidden="false" aria-label="Example home icon" (click)='navigateHome()'>home</mat-icon>
-          </a>
-          <a mat-list-item (click)='onEmployeeIconClick(menuTrigger)'>
-              <div #menuTrigger="matMenuTrigger" [matMenuTriggerFor]="menu">
-              </div>
-              <mat-icon aria-hidden="false" aria-label="Example home icon">perm_identity</mat-icon>
-          </a>
-          <mat-menu #menu="matMenu" class="nav-mat-menu">
-              <button mat-menu-item (click)='navigateEmployee()'>Lista pracowników</button>
-              <button mat-menu-item (click)='navigateAddEmployee()'>Profil pracownika</button>
-          </mat-menu>
-          <mat-nav-list class="sidenav-submenu" *ngIf="showEmployeeMenu">
-              <a mat-list-item>
-                  <mat-icon>arrow_right</mat-icon>
-              </a>
-              <a mat-list-item>
-                  <mat-icon>arrow_right</mat-icon>
-              </a>
-          </mat-nav-list>
-          <a mat-list-item (click)='onPresentIconClick(menuTrigger2)'>
-              <div #menuTrigger2="matMenuTrigger" [matMenuTriggerFor]="menu2"></div>
-              <mat-icon aria-hidden="false" aria-label="Example home icon">schedule</mat-icon>
-          </a>
-          <mat-menu #menu2="matMenu" class="nav-mat-menu">
-              <button mat-menu-item (click)='navigatePreseceList()'>Lista obecności</button>
-              <button mat-menu-item (click)='navigateAbsenceList()'>Lista nieobecnosci</button>
-          </mat-menu>
-          <mat-nav-list class="sidenav-submenu" *ngIf="showPresentMenu">
-              <a mat-list-item>
-                  <mat-icon>arrow_right</mat-icon>
-              </a>
-              <a mat-list-item>
-                  <mat-icon>arrow_right</mat-icon>
-              </a>
-          </mat-nav-list>
-          <a mat-list-item>
-              <mat-icon aria-hidden="false" aria-label="Example home icon" (click)='navigateRFID()'>credit_card</mat-icon>
-          </a>
-          <a mat-list-item>
-              <mat-icon aria-hidden="false" aria-label="Example home icon">settings</mat-icon>
-          </a>
+    <mat-toolbar><mat-icon>fitness_center</mat-icon></mat-toolbar>
+    <mat-nav-list class="mat-nav-height">
+      <a mat-list-item>
+        <mat-icon aria-hidden="false" aria-label="Example home icon" (click)='navigateHome()'>home</mat-icon>
+      </a>
+      <a mat-list-item (click)='onEmployeeIconClick(menuTrigger)'>
+        <div #menuTrigger="matMenuTrigger" [matMenuTriggerFor]="menu">
+        </div>
+        <mat-icon aria-hidden="false" aria-label="Example home icon">perm_identity</mat-icon>
+      </a>
+      <mat-menu #menu="matMenu" class="nav-mat-menu">
+        <button mat-menu-item (click)='navigateUsersList()'>Lista pracowników</button>
+        <button mat-menu-item (click)='navigateEmploeeList()'>Lista klubowiczów</button>
+        <button mat-menu-item (click)='navigateAddUser()'>Dodaj osobe</button>
+      </mat-menu>
+      <mat-nav-list class="sidenav-submenu" *ngIf="showUsersMenu">
+        <a mat-list-item>
+          <mat-icon>arrow_right</mat-icon>
+        </a>
+        <a mat-list-item>
+          <mat-icon>arrow_right</mat-icon>
+        </a>
+        <a mat-list-item>
+          <mat-icon>arrow_right</mat-icon>
+        </a>
       </mat-nav-list>
+      <a mat-list-item (click)='onPresentIconClick(menuTrigger2)'>
+        <div #menuTrigger2="matMenuTrigger" [matMenuTriggerFor]="menu2"></div>
+        <mat-icon aria-hidden="false" aria-label="Example home icon">content_paste</mat-icon>
+      </a>
+      <mat-menu #menu2="matMenu" class="nav-mat-menu">
+        <button mat-menu-item (click)='navigateEmployeeContract()'>Umowy pracowników</button>
+        <button mat-menu-item (click)='navigateUserContract()'>Umowy uczestników</button>
+      </mat-menu>
+      <mat-nav-list class="sidenav-submenu" *ngIf="showContractMenu">
+        <a mat-list-item>
+          <mat-icon>arrow_right</mat-icon>
+        </a>
+        <a mat-list-item>
+          <mat-icon>arrow_right</mat-icon>
+        </a>
+      </mat-nav-list>
+      <a mat-list-item (click)='onSheduleIconClick(menuTrigger3)'>
+        <div #menuTrigger3="matMenuTrigger" [matMenuTriggerFor]="menu3"></div>
+        <mat-icon aria-hidden="false" aria-label="Example home icon">schedule</mat-icon>
+      </a>
+      <mat-menu #menu3="matMenu" class="nav-mat-menu">
+        <button mat-menu-item (click)='navigateCalendar()'>Kalendarz zajęć</button>
+        <button mat-menu-item (click)='navigateFitnessActivity()'>Lista zajęć fitness</button>
+        <button mat-menu-item (click)='navigateAddFitnessActivity()'>Dodaj zajęcia fitness</button>
+      </mat-menu>
+      <mat-nav-list class="sidenav-submenu" *ngIf="showCalendarMenu">
+        <a mat-list-item>
+          <mat-icon>arrow_right</mat-icon>
+        </a>
+        <a mat-list-item>
+          <mat-icon>arrow_right</mat-icon>
+        </a>
+        <a mat-list-item>
+          <mat-icon>arrow_right</mat-icon>
+        </a>
+      </mat-nav-list>
+      <a mat-list-item>
+        <mat-icon aria-hidden="false" aria-label="Example home icon">settings</mat-icon>
+      </a>
+    </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
-      <mat-sidenav-container class="sidenav-container">
-          <mat-sidenav #drawer class="sidenav-hidden" fixedInViewport [attr.role]="'navigation'" [mode]="'side'" [opened]="true">
-              <mat-toolbar>SYSTEM RCP</mat-toolbar>
-              <mat-nav-list class="mat-nav-height">
-                  <a mat-list-item (click)='navigateHome()'>Home</a>
-                  <a mat-list-item (click)='showEmployeeMenu=!showEmployeeMenu'>
-                    Pracownicy
-                    <span class="example-spacer"></span>
-                    <mat-icon *ngIf="!showEmployeeMenu">chevron_right</mat-icon>
-                    <mat-icon *ngIf="showEmployeeMenu">expand_more</mat-icon>
-                  </a>
-                  <mat-nav-list class="sidenav-submenu" *ngIf="showEmployeeMenu">
-                      <a mat-list-item (click)='navigateEmployee()'>
-                        Lista pracowników
-                      </a>
-                      <a mat-list-item (click)='navigateAddEmployee()'>
-                        Profil pracownika
-                      </a>
-                  </mat-nav-list>
-                  <a mat-list-item (click)='showPresentMenu=!showPresentMenu'>
-                    Obecność
-                    <span class="example-spacer"></span>
-                    <mat-icon *ngIf="!showEmployeeMenu">chevron_right</mat-icon>
-                    <mat-icon *ngIf="showEmployeeMenu">expand_more</mat-icon>
-                  </a>
-                  <mat-nav-list class="sidenav-submenu" *ngIf="showPresentMenu">
-                      <a mat-list-item (click)='navigatePreseceList()'>
-                      Lista obecności
-                      </a>
-                      <a mat-list-item (click)='navigateAbsenceList()'>
-                      Lista nieobecnosci
-                      </a>
-                  </mat-nav-list>
-                  <a mat-list-item (click)='navigateRFID()'>Czytnik</a>
-                  <a mat-list-item (click)='navigateSettings()'>Ustawienia</a>
-              </mat-nav-list>
-          </mat-sidenav>
-          <mat-sidenav-content>
-              <mat-toolbar class="main-toolbar">
-                  <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="onSideNavClick(drawer)">
-              <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-              </button>
-                  <span>SystemRCP</span>
-              </mat-toolbar>
-              <router-outlet></router-outlet>
-          </mat-sidenav-content>
-      </mat-sidenav-container>
+    <mat-sidenav-container class="sidenav-container">
+      <mat-sidenav #drawer class="sidenav-hidden" fixedInViewport [attr.role]="'navigation'" [mode]="'side'"
+        [opened]="true">
+        <mat-toolbar>System Fitness</mat-toolbar>
+        <mat-nav-list class="mat-nav-height">
+          <a mat-list-item (click)='navigateHome()'>Home</a>
+          <a mat-list-item (click)='showUsersMenu=!showUsersMenu'>
+            Pracownicy
+            <span class="example-spacer"></span>
+            <mat-icon *ngIf="!showUsersMenu">chevron_right</mat-icon>
+            <mat-icon *ngIf="showUsersMenu">expand_more</mat-icon>
+          </a>
+          <mat-nav-list class="sidenav-submenu" *ngIf="showUsersMenu">
+            <a mat-list-item (click)='navigateEmploeeList()'>
+              Lista pracowników
+            </a>
+            <a mat-list-item (click)='navigateUsersList()'>
+              Lista klubowiczów
+            </a>
+            <a mat-list-item (click)='navigateAddUser()'>
+              Dodaj osobe
+            </a>
+          </mat-nav-list>
+          <a mat-list-item (click)='showContractMenu=!showContractMenu'>
+            Umowy
+            <span class="example-spacer"></span>
+            <mat-icon *ngIf="!showUsersMenu">chevron_right</mat-icon>
+            <mat-icon *ngIf="showUsersMenu">expand_more</mat-icon>
+          </a>
+          <mat-nav-list class="sidenav-submenu" *ngIf="showContractMenu">
+            <a mat-list-item (click)='navigateEmployeeContract()'>
+              Pracowników
+            </a>
+            <a mat-list-item (click)='navigateUserContract()'>
+              Uczestników
+            </a>
+          </mat-nav-list>
+          <a mat-list-item (click)='showCalendarMenu=!showCalendarMenu'>
+            Harmonogram zajęć
+            <span class="example-spacer"></span>
+            <mat-icon *ngIf="!showCalendarMenu">chevron_right</mat-icon>
+            <mat-icon *ngIf="showCalendarMenu">expand_more</mat-icon>
+          </a>
+          <mat-nav-list class="sidenav-submenu" *ngIf="showCalendarMenu">
+            <a mat-list-item (click)='navigateCalendar()'>
+              Kalendarz zajęć
+            </a>
+            <a mat-list-item (click)='navigateFitnessActivity()'>
+              Lista zajęć fitness
+            </a>
+            <a mat-list-item (click)='navigateAddFitnessActivity()'>
+              Dodaj zajęcia fitness
+            </a>
+          </mat-nav-list>
+          <a mat-list-item (click)='navigateSettings()'>Ustawienia</a>
+        </mat-nav-list>
+      </mat-sidenav>
+      <mat-sidenav-content>
+        <mat-toolbar class="main-toolbar">
+          <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="onSideNavClick(drawer)">
+            <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+          </button>
+          <span></span>
+        </mat-toolbar>
+        <router-outlet></router-outlet>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
   </mat-sidenav-content>
 </mat-sidenav-container>
