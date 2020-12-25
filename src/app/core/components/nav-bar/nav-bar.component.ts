@@ -70,6 +70,7 @@ export class NavBarComponent {
     if(!this.sideNavHiddenVisibility){
       this.showUsersMenu = false;
       this.showContractMenu = false;
+      this.showCalendarMenu = false;
     }
   }
 

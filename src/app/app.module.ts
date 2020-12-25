@@ -12,12 +12,14 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
+import { PageNotFoundComponent } from './core/components/page-not-found/page-not-found.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     NavBarComponent,
+    PageNotFoundComponent,
 
   ],
   imports: [
