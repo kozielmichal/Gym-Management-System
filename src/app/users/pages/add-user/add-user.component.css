@@ -1,0 +1,9 @@
+.mat-toolbar {
+  border-bottom: 1px solid rgb(197, 191, 191);
+}
+
+mat-tab-group {
+  margin: 30px 100px 0px 100px;
+  border: 1px solid rgb(197, 191, 191);
+  /* height: 80vh; */
+}

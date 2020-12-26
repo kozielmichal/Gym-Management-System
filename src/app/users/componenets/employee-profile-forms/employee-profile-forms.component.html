@@ -1,0 +1,131 @@
+<div class="container">
+  <form>
+    <div class="account-info">
+      <fieldset>
+        <legend>Podstawowe informacje</legend>
+        <div class="info-container normal-form">
+          <!-- [formGroup]='service.form' (ngSubmit)="onSubmit(service.form.value)"> -->
+          <div class="form-controls">
+            <mat-form-field appearance="">
+              <mat-label>Imię</mat-label>
+              <input matInput formControlName="name">
+            </mat-form-field>
+            <mat-form-field appearance="">
+              <mat-label>Nazwisko</mat-label>
+              <input matInput formControlName="name">
+            </mat-form-field>
+            <mat-form-field appearance="">
+              <mat-label>E-mail</mat-label>
+              <input matInput formControlName="name">
+            </mat-form-field>
+            <mat-form-field appearance="">
+              <mat-label>Telefon</mat-label>
+              <input matInput formControlName="name">
+            </mat-form-field>
+            <mat-form-field appearance="">
+              <mat-label>PESEL</mat-label>
+              <input matInput formControlName="name">
+            </mat-form-field>
+          </div>
+          <div class="form-controls">
+            <div class="location">
+              <mat-form-field appearance="" style="padding-right: 2.5%;">
+                <mat-label>Kod pocztowy</mat-label>
+                <input matInput formControlName="name">
+              </mat-form-field>
+              <mat-form-field appearance="">
+                <mat-label>Miasto</mat-label>
+                <input matInput formControlName="name">
+              </mat-form-field>
+            </div>
+            <mat-form-field appearance="">
+              <mat-label>Ulica</mat-label>
+              <input matInput formControlName="name">
+            </mat-form-field>
+            <div>
+              <p>Płeć: </p>
+              <mat-radio-group>
+                <mat-radio-button value="M">Kobieta</mat-radio-button>
+                <mat-radio-button value="W">Mężczyzna</mat-radio-button>
+              </mat-radio-group>
+            </div>
+            <div class="form-img">
+              <img src="" alt="" style="width:100px;height: 100px;">
+            </div>
+            <div class="form-controls" *ngIf="employeeProfile">
+              <button mat-raised-button color="warn" class="btns">Dodaj karte </button>
+              <button mat-raised-button color="accent" class="btns">Dodaj umowe </button>
+              <button mat-raised-button color="primary" class="btns" (click)="submit()" *ngIf="create">Dodaj pracownika</button>
+              <button mat-raised-button color="primary" class="btns" (click)="submit()" *ngIf="edit">Edytuj pracownika</button>
+            </div>
+            <div class="form-controls" *ngIf="customerProfile">
+              <button mat-raised-button color="warn" class="btns">Dodaj karte </button>
+              <button mat-raised-button color="accent" class="btns">Dodaj umowe </button>
+              <button mat-raised-button color="primary" class="btns" (click)="submit()" *ngIf="create">Dodaj klubowicza</button>
+              <button mat-raised-button color="primary" class="btns" (click)="submit()" *ngIf="edit">Edytuj klubowicza</button>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+    <div class="account-extra">
+      <fieldset *ngIf="employeeProfile">
+        <legend>Dodatkowe informacje</legend>
+        <div class="info-container normal-form">
+          <!-- [formGroup]='service.form' (ngSubmit)="onSubmit(service.form.value)"> -->
+          <div class="form-controls">
+            <mat-form-field appearance="">
+              <mat-label>Stanowisko</mat-label>
+              <mat-select formControlName="color">
+                <ng-container>
+                  <mat-option [value]="'P'">programista</mat-option>
+                  <mat-option [value]="'HR'">HR</mat-option>
+                  <mat-option [value]="'OD'">operator drukarek</mat-option>
+                </ng-container>
+              </mat-select>
+              <!-- <mat-select formControlName="color" placeholder="color">
+                            <ng-container *ngFor="let color of colorList$ | async ">
+                                <mat-option [value]="color.id">{{color.name}}</mat-option>
+                            </ng-container>
+                        </mat-select> -->
+            </mat-form-field>
+            <mat-form-field appearance="">
+              <mat-label>Dział</mat-label>
+              <mat-select formControlName="color">
+                <ng-container>
+                  <mat-option [value]="'P'">programista</mat-option>
+                  <mat-option [value]="'HR'">HR</mat-option>
+                  <mat-option [value]="'OD'">operator drukarek</mat-option>
+                </ng-container>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field appearance="">
+              <mat-label>Przełożony</mat-label>
+              <mat-select formControlName="color">
+                <ng-container>
+                  <mat-option [value]="'P'">Piotr</mat-option>
+                  <mat-option [value]="'HR'">Paweł</mat-option>
+                  <mat-option [value]="'OD'">Ania</mat-option>
+                </ng-container>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="form-controls">
+            <mat-form-field appearance="">
+              <mat-label>Skype</mat-label>
+              <input matInput formControlName="name">
+            </mat-form-field>
+            <mat-form-field appearance="">
+              <mat-label>Facebook</mat-label>
+              <input matInput formControlName="name">
+            </mat-form-field>
+            <mat-form-field appearance="" style="padding-right: 2.5%;">
+              <mat-label>Twitter</mat-label>
+              <input matInput formControlName="name">
+            </mat-form-field>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+  </form>
+</div>

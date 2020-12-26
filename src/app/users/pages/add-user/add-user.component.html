@@ -1,0 +1,13 @@
+<mat-toolbar>
+  <span>Dodaj pracownika/klubowicza</span>
+</mat-toolbar>
+<mat-tab-group>
+  <mat-tab label="Dodaj klubowicza">
+      <!-- <app-user-profile-info></app-user-profile-info> -->
+      <app-employee-profile-forms [customerProfile]=true [create]=true></app-employee-profile-forms>
+  </mat-tab>
+  <mat-tab label="Dodaj pracownika">
+    <app-employee-profile-forms [employeeProfile]=true [create]=true></app-employee-profile-forms>
+  </mat-tab>
+</mat-tab-group>
+
