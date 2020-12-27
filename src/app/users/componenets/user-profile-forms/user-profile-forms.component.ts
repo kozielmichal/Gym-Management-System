@@ -1,15 +1,15 @@
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-employee-profile-forms',
-  templateUrl: './employee-profile-forms.component.html',
-  styleUrls: ['./employee-profile-forms.component.css']
+  selector: 'app-user-profile-forms',
+  templateUrl: './user-profile-forms.component.html',
+  styleUrls: ['./user-profile-forms.component.css']
 })
-export class EmployeeProfileFormsComponent implements OnInit {
+export class UserProfileFormsComponent implements OnInit {
 
   @Input() employeeProfile: boolean;
   @Input() customerProfile: boolean;
-  @Input() edit: boolean;
+  @Input() update: boolean;
   @Input() create: boolean;
   constructor() { }
 
@@ -19,4 +19,5 @@ export class EmployeeProfileFormsComponent implements OnInit {
   submit(){
     console.log("submit")
   }
+
 }

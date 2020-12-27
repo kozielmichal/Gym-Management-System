@@ -1,0 +1,45 @@
+.full-width-table {
+  width: 100%;
+}
+
+tr.mat-row {
+  height: 35px!important;
+}
+
+mat-list-option {
+  height: 25px!important;
+}
+
+mat-selection-list {
+  border-bottom: 1px solid rgb(197, 191, 191);
+}
+
+.example-container {
+  height: 80vh;
+}
+
+.filter-position {
+  padding: 5px;
+  display: grid;
+  place-items: center;
+  border-bottom: 1px solid rgb(197, 191, 191);
+}
+
+.filter-position-border {
+  border-top: 1px solid rgb(197, 191, 191);
+}
+
+mat-drawer {
+  width: 200px;
+}
+
+.filter-toolbar {
+  display: flex;
+  place-items: center;
+  background-color: white!important;
+  height: 30px;
+  border-bottom: 1px solid rgb(197, 191, 191);
+  padding-left: 5px;
+}
+
+.filter-form {}

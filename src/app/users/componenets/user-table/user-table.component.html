@@ -1,0 +1,83 @@
+<mat-drawer-container class="example-container">
+  <mat-drawer mode="side" opened>
+    <div class="filter-position">Stanowisko</div>
+    <mat-selection-list #position>
+      <mat-list-option>Pracownicy</mat-list-option>
+      <mat-list-option>HR</mat-list-option>
+      <mat-list-option>Programisci</mat-list-option>
+    </mat-selection-list>
+    <br>
+    <div class="filter-position filter-position-border">Dział</div>
+    <mat-selection-list #section>
+      <mat-list-option>HR</mat-list-option>
+      <mat-list-option>Hala</mat-list-option>
+      <mat-list-option>Produkcja</mat-list-option>
+    </mat-selection-list>
+  </mat-drawer>
+  <mat-drawer-content>
+    <div class="filter-toolbar">
+      <input matInput type="text" (keyup)="doFilter($event.target.value)" placeholder="Filter">
+    </div>
+    <div class="mat-elevation-z8">
+      <table mat-table class="full-width-table" matSort aria-label="Elements" [dataSource]="dataSource">
+        <!-- Id Column -->
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Id</th>
+          <td mat-cell *matCellDef="let row">{{row.id}}</td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Imię</th>
+          <td mat-cell *matCellDef="let row">{{row.name}}</td>
+        </ng-container>
+        <ng-container matColumnDef="surname">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Nazwisko</th>
+          <td mat-cell *matCellDef="let row">{{row.surname}}</td>
+        </ng-container>
+        <ng-container matColumnDef="phone">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Nr Telefonu</th>
+          <td mat-cell *matCellDef="let row">{{row.phone}}</td>
+        </ng-container>
+        <ng-container matColumnDef="position">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Stanowisko</th>
+          <td mat-cell *matCellDef="let row">{{row.position}}</td>
+        </ng-container>
+        <ng-container matColumnDef="section">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Dział</th>
+          <td mat-cell *matCellDef="let row">{{row.section}}</td>
+        </ng-container>
+        <ng-container matColumnDef="identifier">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Nr identyfikatora</th>
+          <td mat-cell *matCellDef="let row">{{row.identifier}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="employeeAction">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Akcje</th>
+          <td mat-cell *matCellDef="let row">
+              <button mat-icon-button color="primary" aria-label="pokaż informacje" (click)="navigateEmployee(row.id)" *ngIf="employeeProfile">
+                <mat-icon>touch_app</mat-icon> Wyświetl szczegóły
+              </button>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="customerAction">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Akcje</th>
+          <td mat-cell *matCellDef="let row">
+            <button mat-icon-button color="primary" aria-label="pokaż informacje" (click)="navigateCustomer(row.id)" *ngIf="customerProfile">
+              <mat-icon>touch_app</mat-icon> Wyświetl szczegóły
+            </button>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+
+      <mat-paginator #paginator [length]="dataSource?.data.length" [pageIndex]="0" [pageSize]="15"
+        [pageSizeOptions]="[15, 30, 50, 100,250]">
+      </mat-paginator>
+    </div>
+
+  </mat-drawer-content>
+</mat-drawer-container>

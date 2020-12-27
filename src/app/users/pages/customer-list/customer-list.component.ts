@@ -1,20 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-employee-list',
-  templateUrl: './employee-list.component.html',
-  styleUrls: ['./employee-list.component.css']
+  selector: 'app-customer-list',
+  templateUrl: './customer-list.component.html',
+  styleUrls: ['./customer-list.component.css']
 })
-export class EmployeeListComponent implements OnInit {
+export class CustomerListComponent implements OnInit {
 
   data = EXAMPLE_DATA;
-  columns = ['name', 'surname', 'phone', 'section', 'identifier','employeeAction'];
+  columns = ['name','surname','phone','customerAction'];
 
   constructor() { }
 
   ngOnInit(): void {
   }
-
 
 }
 

@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import { MatSidenav } from '@angular/material/sidenav';
 import { Router } from '@angular/router';
+import { AppRoutes } from '../../constants/app-routs.constants';
 
 @Component({
   selector: 'app-nav-bar',
@@ -24,73 +25,73 @@ export class NavBarComponent {
       shareReplay()
     );
 
-  constructor(private breakpointObserver: BreakpointObserver , private router: Router) {
+  constructor(private breakpointObserver: BreakpointObserver, private router: Router) {
   }
 
-  navigateHome(){
-    // this.router.navigate(["/" + AppRoutes.HOME]);
+  navigateHome() {
+    this.router.navigate(["/" + AppRoutes.HOME]);
   }
-  navigateEmploeeList(){
-    // this.router.navigate(["/" + AppRoutes.USERLIST])
-  }
-
-  navigateUsersList(){
-    // this.router.navigate(["/" + AppRoutes.USERLIST])
-  }
-  navigateAddUser(){
-    // this.router.navigate(["/" + AppRoutes.USERINFO])
+  navigateEmploeeList() {
+    this.router.navigate(["/" + AppRoutes.USERS + "/" +AppRoutes.EMPLOYEELIST])
   }
 
-  navigateEmployeeContract(){
+  navigateUsersList() {
+    this.router.navigate(["/" + AppRoutes.USERS + "/" +AppRoutes.CUSTOMERLIST])
+  }
+  navigateAddUser() {
+    this.router.navigate(["/" + AppRoutes.USERS +"/" + AppRoutes.ADDUSER])
+  }
+
+  navigateEmployeeContract() {
     // this.router.navigate(["/" + AppRoutes.PRESENCELIST])
   }
 
-  navigateUserContract(){
+  navigateUserContract() {
     // this.router.navigate(["/" + AppRoutes.ABSENCE])
   }
 
-  navigateCalendar(){
+  navigateCalendar() {
     // this.router.navigate(["/" + AppRoutes.RFID])
   }
 
-  navigateFitnessActivity(){
+  navigateFitnessActivity() {
     // this.router.navigate(["/" + AppRoutes.RFID])
   }
 
-  navigateAddFitnessActivity(){
+  navigateAddFitnessActivity() {
     // this.router.navigate(["/" + AppRoutes.RFID])
   }
-  navigateSettings(){
-    // this.router.navigate(["/" + AppRoutes.SETTINGS])
+  navigateSettings() {
+    this.router.navigate(["/" + AppRoutes.SETTINGS])
   }
 
-  onSideNavClick(drawer){
+  onSideNavClick(drawer) {
     drawer.toggle();
     this.sideNavHiddenVisibility = !this.sideNavHiddenVisibility;
-    if(!this.sideNavHiddenVisibility){
+    if (!this.sideNavHiddenVisibility) {
       this.showUsersMenu = false;
       this.showContractMenu = false;
       this.showCalendarMenu = false;
     }
   }
 
-  onEmployeeIconClick(menuTrigger){
+  onEmployeeIconClick(menuTrigger) {
     if (this.sideNavHiddenVisibility)
-      this.showUsersMenu=!this.showUsersMenu;
+      this.showUsersMenu = !this.showUsersMenu;
     if (!this.sideNavHiddenVisibility)
       menuTrigger.openMenu();
   }
 
-  onPresentIconClick(menuTrigger){
+  onPresentIconClick(menuTrigger) {
     if (this.sideNavHiddenVisibility)
-      this.showContractMenu=!this.showContractMenu
+      this.showContractMenu = !this.showContractMenu
     if (!this.sideNavHiddenVisibility)
       menuTrigger.openMenu();
   }
 
-  onSheduleIconClick(menuTrigger){
+  onSheduleIconClick(menuTrigger) {
     if (this.sideNavHiddenVisibility)
-      this.showCalendarMenu=!this.showCalendarMenu
+      this.showCalendarMenu = !this.showCalendarMenu
     if (!this.sideNavHiddenVisibility)
       menuTrigger.openMenu();
   }
