@@ -4,7 +4,7 @@ export class AppRoutes {
   public static EMPLOYEELIST: string = "employee-list";
   public static EMPLOYEEINFO: string = "employee-info";
   public static USERS: string = "users";
-  public static SCHEDULE: string = "shedule";
+  public static SCHEDULE: string = "schedule";
   public static CONTRACT: string = "contract";
   public static SETTINGS: string = "settings";
   public static AUTH: string = "settings";

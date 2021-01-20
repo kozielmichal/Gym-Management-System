@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="month">
+      <div class="navigation" style="text-align: center;">
+          <button mat-icon-button color="primary" (click)="changeMonth('down','month')"><mat-icon>arrow_left</mat-icon></button>
+          <button mat-icon-button color="primary" (click)="changeMonth('up','month')"><mat-icon>arrow_right</mat-icon></button>
+          <button mat-raised-button color="primary" (click)="changeMonth('today','month')">Dzisaj</button>
+          <button mat-icon-button color="primary" (click)="changeMonth('down','year')"><mat-icon>arrow_left</mat-icon></button>
+          <button mat-icon-button color="primary" (click)="changeMonth('up','year')"><mat-icon>arrow_right</mat-icon></button>
+      </div>
+      <span style="text-align: center; width: 400px;">{{monthName}}</span>
+  </div>
+  <div class="days border-days"> Pon </div>
+  <div class="days border-days"> Wt </div>
+  <div class="days border-days"> Sr </div>
+  <div class="days border-days"> Czw </div>
+  <div class="days border-days"> Pt </div>
+  <div class="days border-days"> Sob </div>
+  <div class="days border-days"> Nd </div>
+  <div *ngFor="let day of calendar" [ngClass]="{'number': day != '','bg-blank': day == '' , '.days': day == ''}" (click)="openNoteDialog(day)"> {{day}}</div>
+</div>

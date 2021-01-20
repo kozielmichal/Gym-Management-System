@@ -1,3 +1,4 @@
+import { ScheduleModule } from './schedule/schedule.module';
 import { SharedModule } from './shared/shared.module';
 import { AuthModule } from './auth/auth.module';
 import { BrowserModule } from '@angular/platform-browser';
@@ -23,6 +24,7 @@ import { PageNotFoundComponent } from './core/components/page-not-found/page-not
     SharedModule,
     UsersModule,
     AuthModule,
+    ScheduleModule,
     AppRoutingModule,
 
   ],

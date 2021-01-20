@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="month">
+    <div class="navigation" style="text-align: center;">
+      <button mat-flat-button color="primary" (click)="changeMonth('today','month')">Dzisaj</button>
+      <button mat-icon-button color="primary" (click)="changeMonth('down','week')">
+        <mat-icon>arrow_left</mat-icon>
+      </button>
+      <span>week</span>
+      <button mat-icon-button color="primary" (click)="changeMonth('up','week')">
+        <mat-icon>arrow_right</mat-icon>
+      </button>
+      <button mat-icon-button color="primary" (click)="changeMonth('down','month')">
+        <mat-icon>arrow_left</mat-icon>
+      </button>
+      <span>month</span>
+      <button mat-icon-button color="primary" (click)="changeMonth('up','month')">
+        <mat-icon>arrow_right</mat-icon>
+      </button>
+      <button mat-icon-button color="primary" (click)="changeMonth('down','year')">
+        <mat-icon>arrow_left</mat-icon>
+      </button>
+      <span>year</span>
+      <button mat-icon-button color="primary" (click)="changeMonth('up','year')">
+        <mat-icon>arrow_right</mat-icon>
+      </button>
+    </div>
+    <h3 style="text-align: center; width: 100%;">{{monthName}}</h3>
+  </div>
+
+  <div class="table">
+    <table>
+      <tr>
+        <th style="width: 50px;">Godzina</th>
+        <th>Pon</th>
+        <th>Wt</th>
+        <th>Śr</th>
+        <th>Czw</th>
+        <th>Pt</th>
+        <th>Sob</th>
+        <th>Nd</th>
+      </tr>
+      <tr *ngFor="let hour of hours">
+        <td style="width: 50px;">{{hour}}</td>
+        <td *ngFor="let day of days" (click)='clickDay(day,hour)'></td>
+      </tr>
+    </table>
+  </div>
+
+</div>
