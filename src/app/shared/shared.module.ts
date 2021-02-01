@@ -31,6 +31,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { LayoutModule } from '@angular/cdk/layout';
+import { DatepickerMultipleSelectionComponent } from './components/datepicker-multiple-selection/datepicker-multiple-selection.component';
 
 const material = [
   MatCheckboxModule,
@@ -68,11 +69,11 @@ const material = [
 ]
 
 @NgModule({
-  declarations: [],
+  declarations: [DatepickerMultipleSelectionComponent],
   imports: [
     CommonModule,
     material
   ],
-  exports: [material]
+  exports: [material,DatepickerMultipleSelectionComponent]
 })
 export class SharedModule { }

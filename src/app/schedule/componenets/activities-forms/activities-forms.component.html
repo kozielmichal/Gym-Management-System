@@ -1,0 +1,68 @@
+<div class="account-info">
+  <form action="">
+    <fieldset>
+      <legend>Dodaj zajęcia</legend>
+      <div class="info-container normal-form">
+        <!-- [formGroup]='service.form' (ngSubmit)="onSubmit(service.form.value)"> -->
+        <div class="form-controls">
+          <mat-form-field appearance="">
+            <mat-label>Nazwa zajęć</mat-label>
+            <input matInput formControlName="name">
+          </mat-form-field>
+          <mat-form-field appearance="">
+            <mat-label>typ zajęć</mat-label>
+            <input matInput formControlName="name">
+          </mat-form-field>
+          <mat-form-field appearance="">
+            <mat-label>Trener</mat-label>
+            <mat-select formControlName="name">
+              <ng-container>
+                <mat-option [value]="'P'">Jacek</mat-option>
+                <mat-option [value]="'HR'">Arek</mat-option>
+                <mat-option [value]="'OD'">Misiek</mat-option>
+              </ng-container>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Maksymalna liczba osób na zajęciach</mat-label>
+            <input type="number" matInput >
+          </mat-form-field>
+        </div>
+        <div class="form-controls">
+          <mat-form-field >
+            <mat-label>Opis</mat-label>
+            <textarea matInput placeholder="Opisz pokrótce zajęcia fitness"></textarea>
+          </mat-form-field>
+          <div class="mat-app-background basic-container">
+            <app-datepicker-multiple-selection [text]="'Wybierz daty zajęć'"></app-datepicker-multiple-selection>
+          </div>
+          <!-- <div class="location">
+            <mat-form-field appearance="" style="padding-right: 2.5%;">
+              <mat-label>Kod pocztowy</mat-label>
+              <input matInput formControlName="name">
+            </mat-form-field>
+            <mat-form-field appearance="">
+              <mat-label>Miasto</mat-label>
+              <input matInput formControlName="name">
+            </mat-form-field>
+          </div>
+          <mat-form-field appearance="">
+            <mat-label>Ulica</mat-label>
+            <input matInput formControlName="name">
+          </mat-form-field>
+          <div>
+            <p>Płeć: </p>
+            <mat-radio-group>
+              <mat-radio-button value="M">Kobieta</mat-radio-button>
+              <mat-radio-button value="W">Mężczyzna</mat-radio-button>
+            </mat-radio-group>
+          </div> -->
+          <div class="form-controls">
+            <button mat-raised-button color="primary" class="btns" (click)="submit()">Dodaj
+              zajęcia</button>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+  </form>
+</div>

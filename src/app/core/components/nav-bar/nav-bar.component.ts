@@ -51,15 +51,15 @@ export class NavBarComponent {
   }
 
   navigateCalendar() {
-    // this.router.navigate(["/" + AppRoutes.RFID])
+    this.router.navigate(["/" + AppRoutes.SCHEDULE +"/" + AppRoutes.CALENDAR])
   }
 
   navigateFitnessActivity() {
-    // this.router.navigate(["/" + AppRoutes.RFID])
+    this.router.navigate(["/" + AppRoutes.SCHEDULE +"/" + AppRoutes.ACTIVITIESLIST])
   }
 
   navigateAddFitnessActivity() {
-    // this.router.navigate(["/" + AppRoutes.RFID])
+    this.router.navigate(["/" + AppRoutes.SCHEDULE +"/" + AppRoutes.ADDACTIVITIES])
   }
   navigateSettings() {
     this.router.navigate(["/" + AppRoutes.SETTINGS])

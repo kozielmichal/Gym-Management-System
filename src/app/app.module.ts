@@ -9,7 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavBarComponent } from './core/components/nav-bar/nav-bar.component';
 import { UsersModule } from './users/users.module';
 import { PageNotFoundComponent } from './core/components/page-not-found/page-not-found.component';
-
+import {MatNativeDateModule} from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -26,6 +26,7 @@ import { PageNotFoundComponent } from './core/components/page-not-found/page-not
     AuthModule,
     ScheduleModule,
     AppRoutingModule,
+    MatNativeDateModule,
 
   ],
   providers: [],

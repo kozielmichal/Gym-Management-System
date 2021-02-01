@@ -1,0 +1,51 @@
+fieldset {
+  margin: 20px;
+  border: 1px solid silver;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+form {}
+.btns{
+  margin-top: 5px;
+}
+.info-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* column-gap: 10px; */
+}
+
+.part-1 {
+  background-color: red;
+}
+
+.part-2 {
+  background-color: yellow;
+}
+
+form.normal-form {
+  width: 100%;
+}
+
+.form-controls {
+  margin: auto;
+  width: 95%;
+}
+
+.form-controls>* {
+  width: 100%;
+}
+
+mat-radio-button {
+  padding-right: 10px
+}
+
+.location>mat-form-field {
+  width: 47.5%;
+}
+
+.form-img {
+  margin: 10px;
+  display: grid;
+  place-items: center;
+}
